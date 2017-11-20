@@ -11,7 +11,6 @@ public class DatabaseSelect {
 	}
 
 	public List<Record> select(JavaRDD<Record> table, String key){
-		final String pred = key;
-		return table.filter(r -> r.columns.get(0).equals(pred)).collect();
+		return table.filter(r -> r.columns.get(0).equals(key)).collect();
 	}
 }
